@@ -1,0 +1,33 @@
+.qb-toast-wrapper{
+    bottom: 24px;
+    right: 24px;
+}
+.qb-toast-container{
+    width: 320px;
+    max-height: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in, transform 0.4s ease-out;
+    &.qb-toast-visible{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    &.qb-toast-removed{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+.qb-toast-indicator{
+    width: 6px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+.qb-toast-bg{
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: linear-gradient(90deg,transparent,var(--ui-grey-0));
+}

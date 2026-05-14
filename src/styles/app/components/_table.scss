@@ -1,0 +1,33 @@
+.qb-table {
+  border-collapse: collapse;
+
+  th {
+    color: var(--ui-grey-700);
+    background-color: var(--ui-grey-200);
+    border-bottom: 1px solid var(--ui-grey-400);
+  }
+
+  .qb-border-bottom {
+    border-bottom: 1px solid var(--ui-grey-400);
+  }
+
+  tr:last-child td.qb-border-bottom {
+    border-bottom: none;
+  }
+}
+
+.qb-table td {
+  vertical-align: middle;
+}
+
+.qb-pagination-wrapper {
+  background-color: var(--ui-grey-200);
+  border-top: 1px solid var(--ui-grey-400);
+}
+
+.qb-pagination-btn {
+  height: 32px;
+  width: 32px;
+
+  &.qb-pagination-btn-active {}
+}

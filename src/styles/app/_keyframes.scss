@@ -1,0 +1,35 @@
+@keyframes buttonLoaderAnime {
+    from{transform: translateY(-50%) rotate(0deg);}
+    to{transform: translateY(-50%) rotate(360deg);}
+}
+
+@keyframes linkLoaderAnime {
+    0%{content:"";}
+    25%{content: ".";}
+    50%{content: "..";}
+    75%{content: "...";}
+}
+
+@keyframes linkHoverAnime {
+    0%{
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+    50%{
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+    51%{
+        transform-origin: left;
+        transform: scaleX(0);  
+    }
+    100%{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes rotateAnime {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}

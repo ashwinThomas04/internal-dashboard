@@ -1,0 +1,83 @@
+:root {
+  --ui-grey-0: #FFFFFF;
+  --ui-grey-100: #F5F9FF;
+  --ui-grey-200: #F2F6FD;
+  --ui-grey-300: #E9EEF5;
+  --ui-grey-400: #D8DEE6;
+  --ui-grey-500: #BAC3CF;
+  --ui-grey-600: #8B9AB1;
+  --ui-grey-700: #6B788C;
+  --ui-grey-800: #4C5664;
+  --ui-grey-900: #2D333C;
+  --ui-grey-1000: #0F1114;
+
+  --ui-primary-100: #8CA1F8;
+  --ui-primary-200: #718AF4;
+  --ui-primary-300: #4D6CEF;
+  --ui-primary-400: #2F53EB;
+  --ui-primary-500: #2845C7;
+  --ui-primary-600: #20379E;
+  --ui-primary-700: #172975;
+  --ui-primary-800: #0F1B4D;
+
+  --ui-secondary-100: #9A8CF8;
+  --ui-secondary-200: #8271F4;
+  --ui-secondary-300: #624DEF;
+  --ui-secondary-400: #482FEB;
+  --ui-secondary-500: #3D28C7;
+  --ui-secondary-600: #30209E;
+  --ui-secondary-700: #241775;
+  --ui-secondary-800: #170F4D;
+
+  --ui-tertiary-100: #F8DC8C;
+  --ui-tertiary-200: #F4D371;
+  --ui-tertiary-300: #EFC64D;
+  --ui-tertiary-400: #EBBB2F;
+  --ui-tertiary-500: #C79F28;
+  --ui-tertiary-600: #9E7E20;
+  --ui-tertiary-700: #755E17;
+  --ui-tertiary-800: #4D3D0F;
+
+  --ui-success-200: #01E17B;
+  --ui-success-400: #00BD68;
+  --ui-success-600: #009451;
+  --ui-warning-200: #FFD21F;
+  --ui-warning-400: #FFB71F;
+  --ui-warning-600: #FF991F;
+  --ui-error-200: #F04349;
+  --ui-error-400: #CC393E;
+  --ui-error-600: #A32E32;
+
+  --ui-marketing-grey: #58595B;
+  --ui-marketing-red: #DB2726;
+
+  /* semantic tokens */
+  --ui-color-primary: var(--ui-primary-400);
+  --ui-color-secondary: var(--ui-secondary-400);
+  --ui-color-tertiary: var(--ui-tertiary-400);
+  --ui-color-success: var(--ui-success-400);
+  --ui-color-warning: var(--ui-warning-400);
+  --ui-color-error: var(--ui-error-400);
+  --ui-color-white: var(--ui-grey-0);
+  --ui-color-light: var(--ui-grey-100);
+  --ui-color-grey: var(--ui-grey-400);
+  --ui-color-dark: var(--ui-grey-1000);
+  --ui-color-muted: var(--ui-grey-700);
+
+  /* rgb variables */
+  --ui-primary-400-rgb: 47, 83, 235;
+  --ui-primary-600-rgb: 32, 55, 158;
+  --ui-grey-0-rgb: 255, 255, 255;
+  --ui-grey-100-rgb: 245, 249, 255;
+  --ui-grey-1000-rgb: 15, 17, 20;
+  --ui-secondary-400-rgb: 72, 47, 235;
+  --ui-error-400-rgb: 204, 57, 62;
+
+  /* Sizes */
+  --ui-sizes-logo-width: auto;
+  --ui-sizes-logo-height: 240px;
+  --ui-sizes-log-width-sm: auto;
+  --ui-sizes-logo-height-sm: 240px;
+  --ui-sizes-header-logo-width: auto;
+  --ui-sizes-header-logo-height: 48px;
+}

@@ -1,0 +1,10 @@
+@function px_map($values...) {
+  $map: (
+  );
+
+@each $v in $values {
+  $map: map-merge($map, ($v: #{$v}px));
+}
+
+@return $map;
+}

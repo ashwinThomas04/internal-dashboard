@@ -1,0 +1,26 @@
+@each $name, $size in $__font_size {
+  .qb-skelton-size-#{$name} {
+    height: #{$size*1.1};
+  }
+}
+.qb-skelton-anime{
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: map-get($__z_values,base);
+        background-image: linear-gradient(90deg,transparent,var(--ui-grey-200),transparent);
+        animation: skelton-anime 0.6s linear infinite;
+    }
+}
+@keyframes skelton-anime {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}

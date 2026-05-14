@@ -1,0 +1,36 @@
+.qb-heading-tabs-wrapper {
+  background-color: var(--ui-grey-300);
+  width: max-content;
+
+  .qb-tab-item {
+    background-color: transparent;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--ui-grey-400);
+    }
+
+    &.qb-tab-active {
+      background-color: var(--ui-grey-1000);
+    }
+  }
+}
+
+.qb-tabs-wrapper {
+  background-color: var(--ui-grey-300);
+
+  .qb-tab-item {
+    background-color: transparent;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--ui-grey-400);
+    }
+
+    &.qb-tab-active {
+      background-color: var(--ui-grey-0);
+    }
+  }
+}

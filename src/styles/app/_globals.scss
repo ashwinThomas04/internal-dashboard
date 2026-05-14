@@ -1,0 +1,60 @@
+/* 
+   * Qubriux UI Global styles
+   * Owner : Skellam AI
+   * Basic overrides
+*/
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+   background: var(--ui-color-light);
+}
+
+body,
+input,
+textarea,
+a,
+p,
+li {
+   font-family: $__font_base;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+   line-height: 120%;
+
+   * {
+      font-family: inherit;
+      line-height: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+   }
+}
+
+p {
+   line-height: 120%;
+}
+
+span {
+   font-size: inherit;
+   font-weight: inherit;
+}
+
+input[type=number] {
+   -moz-appearance: textfield;
+}

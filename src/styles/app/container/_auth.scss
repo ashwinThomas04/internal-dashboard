@@ -1,0 +1,10 @@
+.qb-auth-wrapper {
+  overflow-x: hidden;
+}
+
+.qb-auth-layout-logo {
+  width: var(--ui-sizes-logo-width);
+  height: var(--ui-sizes-logo-height);
+  max-width: 100%;
+  object-fit: contain;
+}

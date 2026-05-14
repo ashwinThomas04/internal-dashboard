@@ -1,0 +1,128 @@
+/*
+   * Qubriux UI themes
+   * Owner : Skellam AI
+*/
+
+/* 
+    * Base Theme
+    * Base theme will be used as default theme through out the app.
+*/
+
+/* Maps */
+/* Base background */
+$__base_bg: (
+    "paper":linear-gradient(135deg, rgba(var(--ui-grey-0-rgb), 0.4) 20%, rgba(var(--ui-grey-0-rgb), 0.53) 110%),
+    "card": linear-gradient(135deg, var(--ui-grey-0) 20%, var(--ui-grey-100) 110%),
+    "base":(radial-gradient(circle at 50% 70%, rgba(var(--ui-primary-400-rgb), 0.125), rgba(var(--ui-grey-100-rgb), 0.063), rgba(var(--ui-grey-100-rgb), 0.314)),
+        linear-gradient(to bottom, rgba(var(--ui-grey-100-rgb), 0.5), rgba(var(--ui-primary-400-rgb), 0.25))),
+    "primary":(radial-gradient(at 65% 67%, #2715AF 0px, transparent 50%),
+        radial-gradient(at 66% 7%, #0400FF 0px, transparent 50%),
+        radial-gradient(at 25% 67%, #42A0FE 0px, transparent 50%),
+        radial-gradient(at 77% 54%, #00C7FF 0px, transparent 50%),
+        radial-gradient(at 8% 98%, var(--ui-primary-100) 0px, transparent 50%),
+        radial-gradient(at 80% 8%, #9ECBFF 0px, transparent 50%),
+        radial-gradient(at 50% 35%, #E6ECF4 0px, transparent 50%))
+);
+/* Border Radius */
+$__border_radius: px_map(4, 6, 8, 12, 16, 24, 32, 48, 64);
+/* Z Index */
+$__z_values: (
+    "neg":-1,
+    "zero":0,
+    "base":1,
+    "select":20,
+    "header":40,
+    "nav":42,
+    "backdrop":58,
+    "popup":60,
+    "snackbar":62
+);
+/* Shadows */
+$__shadow: (
+    "sm": 4px 4px 8px var(--ui-shadow-color, rgba(0, 0, 0, 0.05)),
+    "md": 8px 8px 16px var(--ui-shadow-color, rgba(0, 0, 0, 0.05)),
+    "lg": 16px 16px 32px var(--ui-shadow-color, rgba(0, 0, 0, 0.05)),
+    "xl": 32px 32px 64px var(--ui-shadow-color, rgba(0, 0, 0, 0.05))
+);
+/* Text sixe */
+$__font_size: (
+    "display-md": 88px,
+    "display-sm": 64px,
+    "title-xl": 48px,
+    "title-lg": 40px,
+    "title-md": 32px,
+    "title-sm": 24px,
+    "paragraph-lg": 18px,
+    "paragraph-md": 16px,
+    "paragraph-sm": 14px,
+    "paragraph-xs": 12px,
+    "tag": 10px
+);
+/* Text size - small screens (< 767px) */
+$__font_size_sm: (
+    "display-md": 64px,
+    "display-sm": 52px,
+    "title-xl": 40px,
+    "title-lg": 34px,
+    "title-md": 28px,
+    "title-sm": 22px,
+    "paragraph-lg": 17px,
+    "paragraph-md": 15px,
+    "paragraph-sm": 13px,
+    "paragraph-xs": 12px,
+    "tag": 10px
+);
+/* Text size - extra small screens (< 566px) */
+$__font_size_xs: (
+    "display-md": 52px,
+    "display-sm": 44px,
+    "title-xl": 34px,
+    "title-lg": 30px,
+    "title-md": 26px,
+    "title-sm": 20px,
+    "paragraph-lg": 16px,
+    "paragraph-md": 14px,
+    "paragraph-sm": 13px,
+    "paragraph-xs": 11px,
+    "tag": 10px
+);
+/* Font weight */
+$__font_weight: (
+    "light":200,
+    "regular":300,
+    "semi-bold":500,
+    "bold":600,
+    "black":800
+);
+/* Border */
+$__border_style: (
+    "solid":solid,
+    "dashed":dashed
+);
+/* Cursor */
+$__cursor: (
+    "pointer":pointer,
+    "not-allowed":not-allowed,
+    "move":move
+);
+/* Transition */
+$__transition: (
+    "base":0.3s ease-out,
+    "slow":0.5s ease-out
+);
+
+.qb-top-0 {
+    top: 0;
+}
+
+.qb-left-0 {
+    left: 0;
+}
+
+.qb-right-0 {
+    right: 0;
+}
+
+.qb-bottom-0 {
+    bottom: 0;
+}

@@ -1,0 +1,15 @@
+/* Tier History */
+.qb-tier-history-line {
+  width: 2px;
+  left: 11px;
+  top: -100%;
+  z-index: 0;
+}
+
+.qb-tier-history-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  z-index: 1;
+}

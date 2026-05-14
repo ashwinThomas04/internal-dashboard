@@ -1,0 +1,63 @@
+
+.qb-phone-mockup-wrapper{
+    width: 100%;
+    max-width: 360px;
+}
+.qb-phone-mockup-container{
+    width: 100%;
+    padding-top: 200%;
+}
+.qb-phone-mockup-outer-skin{
+    top: 0;
+    left: 0;
+}
+.qb-phone-mockup-notch{
+    width: 26%;
+    padding-top: 6%;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 64px;
+}
+.qb-phone-mockup-volume{
+    top: 30%;
+    left: 0;
+    transform: translateX(-100%);
+    width: 4px;
+    height: 12%;
+    gap: 4px;
+}
+.qb-phone-mockup-lock{
+    width: 4px;
+    padding-top: 20%;
+    top: 24%;
+    right: 1px;
+    transform: translateX(100%);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+.qb-phone-mockup-mute{
+    width: 4px;
+    padding-top: 12%;
+    top: 20%;
+    left: 0;
+    transform: translateX(-100%);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+.qb-phone-mockup-volume-btn{
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+.qb-phone-mockup-content-wrap{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.qb-pm-horizontal-scroll-wrap{
+    overflow-y: hidden;
+    overflow-x: auto;
+}

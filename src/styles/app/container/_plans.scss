@@ -1,0 +1,8 @@
+/*
+   * Qubriux _plans.scss
+   * Owner : Skellam AI
+   * Description : Stylesheet for plans container
+*/
+.qb-plans-listing-grid-container {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+}

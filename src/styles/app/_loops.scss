@@ -1,0 +1,96 @@
+/* Background color classes */
+$__color_names: grey, primary, secondary, tertiary, success, warning, error, white, light, dark, muted;
+
+/* Background gradiant classes */
+@each $name, $color in $__base_bg {
+  .qb-bg-#{$name}-grad {
+    background-image: #{$color};
+  }
+}
+
+/* Color classes */
+@each $name in $__color_names {
+  .qb-bg-#{$name} {
+    background-color: var(--ui-color-#{$name});
+  }
+
+  .qb-border-hover-#{$name} {
+    background-color: transparent;
+    border: 1px solid var(--ui-color-#{$name});
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--ui-color-#{$name}), white 90%);
+    }
+  }
+
+  .qb-text-#{$name} {
+    color: var(--ui-color-#{$name});
+    --color:var(--ui-color-#{$name});
+  }
+
+  .qb-stroke-#{$name} {
+    stroke: var(--ui-color-#{$name});
+    --color:var(--ui-color-#{$name});
+  }
+
+  .qb-fill-#{$name} {
+    fill: var(--ui-color-#{$name});
+    --color:var(--ui-color-#{$name});
+  }
+
+  @each $border, $style in $__border_style {
+    .qb-border-#{$border}-#{$name} {
+      border: 1px #{$style} var(--ui-color-#{$name});
+    }
+  }
+}
+
+/* Border radius classes */
+@each $size, $val in $__border_radius {
+  .qb-br-#{$size} {
+    border-radius: #{$val};
+  }
+}
+
+/* Z index classes */
+@each $size, $val in $__z_values {
+  .qb-z-#{$size} {
+    z-index: #{$val};
+  }
+}
+
+/* Font size classes */
+@each $name, $size in $__font_size {
+  .qb-fs-#{$name} {
+    font-size: #{$size};
+    line-height: 140%;
+  }
+}
+
+/* Font weight classes */
+@each $name, $weight in $__font_weight {
+  .qb-fw-#{$name} {
+    font-weight: #{$weight};
+  }
+}
+
+/* Shadow classes */
+@each $name, $shadow_type in $__shadow {
+  .qb-shadow-#{$name} {
+    box-shadow: #{$shadow_type};
+  }
+}
+
+/* Cursor classes */
+@each $name, $cursor_type in $__cursor {
+  .qb-cursor-#{$name} {
+    cursor: #{$cursor_type};
+  }
+}
+
+/* Transition classes */
+@each $name, $transition_type in $__transition {
+  .qb-transition-#{$name} {
+    transition: #{$transition_type};
+  }
+}

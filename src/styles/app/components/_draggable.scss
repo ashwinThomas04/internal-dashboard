@@ -1,0 +1,11 @@
+.qb-draggable-wrapper{
+    cursor: grab;
+    opacity: 1;
+    transition: 0.3s ease-in;
+    &.qb-dragging-element{
+        opacity: 0.2;
+    }
+    &:active{
+       cursor: grabbing; 
+    }
+}

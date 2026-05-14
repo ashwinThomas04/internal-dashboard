@@ -1,0 +1,88 @@
+/*
+   * Qubriux style.scss
+   * Owner : Skellam AI
+   * Description : Stylesheet
+*/
+
+@import "fonts";
+@import "utils";
+@import "themes";
+@import "loops";
+@import "globals";
+@import "keyframes";
+
+/* Components */
+@import "components/cta";
+@import "components/input";
+@import "components/alerts";
+@import "components/surface";
+@import "components/navigation";
+@import "components/avatar";
+@import "components/mockup";
+@import "components/modal";
+@import "components/draggable";
+@import "components/skelton";
+@import "components/progressBar";
+@import "components/table";
+@import "components/tabs";
+@import "components/markup";
+@import "components/badge";
+
+/* Containers */
+@import "container/home";
+@import "container/auth";
+@import "container/offers";
+@import "container/builder";
+@import "container/plans";
+
+/* App Styles */
+.qb-app-wrapper {
+   min-height: 100svh;
+}
+
+.qb-text-truncate {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.qb-file-input-btn {
+   bottom: -20px;
+   left: -20px;
+   width: 1px;
+   height: 1px;
+   pointer-events: none;
+   opacity: 0;
+}
+
+.qb-page-loader {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   border: 3px solid rgba(var(--ui-grey-1000-rgb), 0.2);
+   border-top-color: var(--ui-color-dark);
+   animation: rotateAnime 1s linear infinite;
+}
+
+.qb-content-column-wrapper {
+   .qb-content-row-item {
+      border-bottom: 1px solid var(--ui-color-grey);
+
+      &:last-child {
+         border-bottom: none;
+      }
+   }
+}
+
+.qb-empty-illustration {
+   width: 240px;
+}
+
+.qb-merchant-logo-image {
+   width: 200px;
+   height: 200px;
+   object-fit: contain;
+}
+
+/* Responsive */
+@import "responsive";

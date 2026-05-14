@@ -1,0 +1,8 @@
+/*
+   * Qubriux _offers.scss
+   * Owner : Skellam AI
+   * Description : Stylesheet for offers container
+*/
+.qb-offers-listing-grid-container {
+   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}

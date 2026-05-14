@@ -1,0 +1,47 @@
+.qb-avatar-wrapper {
+    background-color: var(--ui-grey-400);
+
+    .qb-avatar-text {
+        color: var(--ui-grey-800);
+    }
+
+    &.qb-avatar-xl {
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+
+        .qb-avatar-text {
+            font-size: 32px;
+        }
+    }
+
+    &.qb-avatar-lg {
+        width: 64px;
+        height: 64px;
+        border-radius: 32px;
+
+        .qb-avatar-text {
+            font-size: 16px;
+        }
+    }
+
+    &.qb-avatar-md {
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+
+        .qb-avatar-text {
+            font-size: 14px;
+        }
+    }
+
+    &.qb-avatar-sm {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+
+        .qb-avatar-text {
+            font-size: 10px;
+        }
+    }
+}

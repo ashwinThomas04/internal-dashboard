@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://app.qubriux.com/sitemap.xml

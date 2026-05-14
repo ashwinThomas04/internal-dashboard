@@ -1,0 +1,143 @@
+// Core variables, functions, and mixins
+
+// Variables
+$variable-prefix: bs- !default;
+$prefix: $variable-prefix !default;
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+  ) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+$grid-row-columns: 6 !default;
+$container-padding-x: $grid-gutter-width !default;
+$gutters: $spacers !default;
+
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px) !default;
+
+$enable-grid-classes: true !default;
+$enable-container-classes: true !default;
+$enable-cssgrid: false !default;
+$enable-important-utilities: true !default;
+$enable-negative-margins: false !default;
+
+// Functions
+@function divide($dividend, $divisor, $precision: 10) {
+  $sign: if($dividend > 0 and $divisor > 0 or $dividend < 0 and $divisor < 0, 1, -1
+  );
+$dividend: abs($dividend);
+$divisor: abs($divisor);
+
+@if $dividend ==0 {
+  @return 0;
+}
+
+@if $divisor ==0 {
+  @error "Cannot divide by 0";
+}
+
+$remainder: $dividend;
+$result: 0;
+$factor: 10;
+
+@while ($remainder > 0 and $precision >=0) {
+  $quotient: 0;
+
+  @while ($remainder >=$divisor) {
+    $remainder: $remainder - $divisor;
+    $quotient: $quotient + 1;
+  }
+
+  $result: $result * 10 + $quotient;
+  $factor: $factor * .1;
+  $remainder: $remainder * 10;
+  $precision: $precision - 1;
+
+  @if ($precision < 0 and $remainder >=$divisor * 5) {
+    $result: $result + 1;
+  }
+}
+
+$result: $result * $factor * $sign;
+$dividend-unit: unit($dividend);
+$divisor-unit: unit($divisor);
+$unit-map: (
+  "px": 1px,
+  "rem": 1rem,
+  "em": 1em,
+  "%": 1%
+);
+
+@if ($dividend-unit !=$divisor-unit and map-has-key($unit-map, $dividend-unit)) {
+  $result: $result * map-get($unit-map, $dividend-unit);
+}
+
+@return $result;
+}
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+
+  @if not $n {
+    @error "breakpoint `#{$name}` not found in `#{$breakpoints}`";
+  }
+
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min !=0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $max: map-get($breakpoints, $name);
+  @return if($max and $max > 0, $max - .02, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints)==null, "", "-#{$name}");
+}
+
+// Mixins
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}

@@ -1,0 +1,351 @@
+/* 
+    * Input element styles
+    * Includes TextInput, Checkbox, Radio, Slider, Select
+*/
+
+.qb-input-wrap {
+    .qb-text-input {
+        padding: 0;
+        margin: 0;
+        outline: none;
+        border: none;
+        background: transparent;
+        color: var(--ui-grey-1000);
+        padding: 12px 16px;
+    }
+
+    .qb-input-container {
+        border: 1px solid var(--ui-grey-500);
+        background-color: rgba(var(--ui-grey-100-rgb), 0.25);
+        transition: 0.3s ease-in;
+        overflow: hidden;
+    }
+
+    .qb-input-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 1;
+        padding: 12px 16px;
+        color: var(--ui-grey-500);
+        transition: 0.3s ease-in;
+
+        path {
+            stroke: var(--ui-grey-500);
+        }
+    }
+
+    .qb-input-prefix,
+    .qb-input-suffix {
+        flex-shrink: 0;
+        padding: 12px 16px;
+        background-color: var(--ui-grey-200);
+        color: var(--ui-grey-1000);
+    }
+
+    .qb-input-prefix {
+        border-right: 1px solid var(--ui-grey-500);
+    }
+
+    .qb-input-suffix {
+        border-left: 1px solid var(--ui-grey-500);
+    }
+
+    .qb-input-suffix-svg-btn {
+        cursor: pointer;
+        width: 52px;
+
+        path {
+            stroke: var(--ui-grey-600);
+            transition: 0.3s ease;
+        }
+
+        &:hover {
+            path {
+                stroke: var(--ui-secondary-400);
+            }
+        }
+
+        &:focus {
+            path {
+                stroke: var(--ui-secondary-400);
+            }
+        }
+    }
+
+    .qb-select-option-wrap {
+        left: 0;
+        border: 1px solid var(--ui-grey-300);
+        background-color: var(--ui-grey-0);
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        pointer-events: none;
+        transition: grid-template-rows 0.3s ease-out, opacity 0.2s ease-in;
+
+        &.qb-select-options-expanded {
+            pointer-events: all;
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+
+        &.qb-select-option-down {
+            transform: translateY(100%);
+            bottom: -4px;
+        }
+
+        &.qb-select-option-up {
+            transform: translateY(-100%);
+            top: -4px;
+        }
+    }
+
+    .qb-select-option-container {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .qb-select-option {
+        font-size: 14px;
+        font-weight: 300;
+        background: transparent;
+        color: var(--ui-grey-1000);
+        transition: 0.3s ease-out;
+
+        &:hover {
+            background: rgba(var(--ui-secondary-400-rgb), 0.125);
+        }
+
+        &.qb-select-option-focused {
+            background: rgba(var(--ui-secondary-400-rgb), 0.125);
+        }
+
+        &.qb-selected-option {
+            background: var(--ui-secondary-400);
+            color: var(--ui-grey-0);
+        }
+    }
+
+    &.qb-select-input-wrap {
+        &:hover {
+            .qb-input-suffix-svg-btn {
+                path {
+                    stroke: var(--ui-secondary-400);
+                }
+            }
+        }
+    }
+
+    &.qb-phone-input-wrap {
+        .qb-input-prefix {
+            transition: 0.3s ease;
+
+            &.qb-input-prefix-expanded {
+                path {
+                    stroke: var(--ui-secondary-400);
+                }
+            }
+
+            &:hover {
+                path {
+                    stroke: var(--ui-secondary-400);
+                }
+            }
+        }
+
+        &.qb-input-error {
+            .qb-input-prefix {
+                path {
+                    stroke: var(--ui-error-400);
+                }
+            }
+        }
+    }
+
+    &.qb-input-focused {
+        .qb-input-container {
+            border: 1px solid var(--ui-secondary-400);
+            background-color: var(--ui-grey-0);
+        }
+
+        .qb-input-placeholder {
+            opacity: 0;
+        }
+    }
+
+    &.qb-input-filled {
+        .qb-input-placeholder {
+            opacity: 0;
+        }
+    }
+
+    &.qb-input-error {
+        .qb-input-container {
+            border: 1px solid var(--ui-error-400);
+            background-color: rgba(var(--ui-error-400-rgb), 0.125);
+        }
+
+        .qb-text-input {
+            color: var(--ui-error-400);
+        }
+
+        .qb-input-placeholder {
+            color: rgba(var(--ui-error-400-rgb), 0.5);
+
+            path {
+                stroke: rgba(var(--ui-error-400-rgb), 0.5);
+            }
+        }
+
+        .qb-input-prefix {
+            color: var(--ui-error-400);
+            background-color: rgba(var(--ui-error-400-rgb), 0.125);
+            border-right: 1px solid var(--ui-error-400);
+        }
+
+        .qb-input-suffix {
+            color: var(--ui-error-400);
+            background-color: rgba(var(--ui-error-400-rgb), 0.125);
+            border-left: 1px solid var(--ui-error-400);
+        }
+
+        .qb-input-suffix-svg-btn {
+            path {
+                stroke: rgba(var(--ui-error-400-rgb), 0.627);
+            }
+
+            &:hover {
+                path {
+                    stroke: var(--ui-error-400);
+                }
+            }
+        }
+    }
+
+    &.qb-input-disabled {
+        pointer-events: none;
+        user-select: none;
+
+        .qb-input-container {
+            background-color: var(--ui-grey-400);
+        }
+
+        .qb-text-input {
+            color: var(--ui-grey-700);
+        }
+
+        .qb-input-prefix {
+            background-color: var(--ui-grey-400);
+            color: var(--ui-grey-700);
+        }
+
+        .qb-input-suffix {
+            background-color: var(--ui-grey-400);
+            color: var(--ui-grey-700);
+        }
+    }
+}
+
+/* Checkbox */
+.qb-checkbox-wrap {
+    .qb-checkbox-input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .qb-checkbox-label {
+        gap: 0;
+        user-select: none;
+    }
+
+    .qb-checkbox-box {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        border: 1.5px solid var(--ui-grey-500);
+        background-color: rgba(var(--ui-grey-100-rgb), 0.25);
+        transition: 0.3s ease-in;
+
+        .qb-checkbox-tick {
+            path {
+                stroke: var(--ui-grey-0);
+                transition: 0.3s ease-in;
+            }
+        }
+
+        &.qb-checkbox-checked {
+            background-color: var(--ui-secondary-400);
+            border-color: var(--ui-secondary-400);
+        }
+    }
+
+    .qb-checkbox-label-text {
+        color: var(--ui-grey-1000);
+        transition: 0.3s ease-in;
+    }
+
+    /* Hover — only when not disabled */
+    &:not(.qb-input-disabled) {
+        .qb-checkbox-label:hover {
+            .qb-checkbox-box:not(.qb-checkbox-checked) {
+                border-color: var(--ui-secondary-400);
+                background-color: rgba(var(--ui-secondary-400-rgb), 0.08);
+            }
+        }
+    }
+
+    /* Focus-visible ring via :has pseudo-class for keyboard nav */
+    .qb-checkbox-label:has(.qb-checkbox-input:focus-visible) {
+        .qb-checkbox-box {
+            outline: 2px solid var(--ui-secondary-400);
+            outline-offset: 2px;
+        }
+    }
+
+    /* Error state */
+    &.qb-input-error {
+        .qb-checkbox-box {
+            border-color: var(--ui-error-400);
+            background-color: rgba(var(--ui-error-400-rgb), 0.08);
+
+            &.qb-checkbox-checked {
+                background-color: var(--ui-error-400);
+                border-color: var(--ui-error-400);
+            }
+        }
+
+        .qb-checkbox-label-text {
+            color: var(--ui-error-400);
+        }
+    }
+
+    /* Disabled state */
+    &.qb-input-disabled {
+        pointer-events: none;
+        user-select: none;
+
+        .qb-checkbox-box {
+            background-color: var(--ui-grey-400);
+            border-color: var(--ui-grey-500);
+
+            &.qb-checkbox-checked {
+                background-color: var(--ui-grey-500);
+                border-color: var(--ui-grey-500);
+            }
+        }
+
+        .qb-checkbox-label-text {
+            color: var(--ui-grey-700);
+        }
+    }
+}

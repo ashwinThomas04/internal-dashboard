@@ -1,0 +1,8 @@
+.qb-badge {
+  @each $name in $__color_names {
+    &.qb-badge-#{$name} {
+      background-color: color-mix(in srgb, var(--ui-color-#{$name}), white 74%);
+      color: color-mix(in srgb, var(--ui-color-#{$name}), black 40%);
+    }
+  }
+}

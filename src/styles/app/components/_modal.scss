@@ -1,0 +1,63 @@
+.qb-modal-open{
+    pointer-events: none !important;
+    overflow: hidden;
+}
+.qb-modal-backdrop{
+    top: 0;
+    left: 0;
+    width: 100svw;
+    height: 100svh;
+    background-color: var(--ui-grey-900);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in;
+    &.qb-modal-active{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+.qb-modal-container{
+    height: 100svh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.qb-modal-dialog-wrapper{
+    top: 16px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 32px);
+    opacity: 0;
+    transform: translateY(80px);
+    .qb-modal-dialog{
+        max-height: 100%;
+    }
+    .qb-modal-dialog-scroll-wrapper{
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    transition: opacity 0.3s ease-in, transform 0.35s ease-out;
+    &.qb-modal-dialog-open{
+        transform: translateY(0);
+        opacity: 1;
+        .qb-modal-dialog{
+            pointer-events: all;
+        }
+    }
+}
+.qb-modal-close-button{
+    width: 48px;
+    height: 48px;
+    top: 0;
+    right: 0;
+    path{
+        stroke:var(--ui-grey-900);
+        transition: 0.35s ease-out;
+    }
+    &:hover{
+        path{
+            stroke: var(--ui-error-400);
+        }
+    }
+}
