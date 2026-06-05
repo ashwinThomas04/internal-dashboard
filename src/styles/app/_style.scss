@@ -84,5 +84,21 @@
    object-fit: contain;
 }
 
+.qb-copy-icon {
+   cursor: pointer;
+
+   path {
+      stroke: var(--ui-color-dark);
+      transition: 0.3s ease-in;
+   }
+
+   &:hover {
+
+      path {
+         stroke: var(--ui-color-secondary);
+      }
+   }
+}
+
 /* Responsive */
 @import "responsive";
