@@ -19,6 +19,7 @@ const AVAILABLE_DASHBOARDS = [
   { label: "Asian 5", merchantId: "1561", amx: "BQWC", base: "asian5" },
   { label: "Eathos", merchantId: "1529", amx: "BQTK", base: "eathos" },
   { label: "Tortilla", merchantId: "1568", amx: "BRUC", base: "tortilla" },
+  { label: "Chuck E Cheese", merchantId: "1545", amx: "BMWC", base: "chuckecheese" },
 ];
 
 const STORE_SELECTION_TYPES = [
@@ -168,6 +169,21 @@ const HomePage = () => {
 
   }
 
+  const handleCopy = (e, url) => {
+    e.stopPropagation();
+    const value = url;
+    if (!value) return;
+    navigator.clipboard.writeText(value).then(() => {
+      alerts.triggerToast(
+        "Copied to clipboard",
+        `${value} copied successfully.`,
+        "SUCCESS"
+      );
+    }).catch(err => {
+      console.error("Failed to copy", err);
+    });
+  };
+
   return (
     <div className="container py-5">
       <Text size="title-lg" weight="black">Customer Dashboard</Text>
@@ -245,20 +261,52 @@ const HomePage = () => {
           qrCodes?.length ?
             <Card className="p-4">
               <Text weight="bold" className="pb-4" >Generated codes</Text>
-              <div className="qb-plans-listing-grid-container d-grid gap-4">
-                {
-                  qrCodes.map(item => {
-                    return (
-                      <div className="w-100 d-flex flex-column p-3 qb-border-solid-dark qb-br-16" key={`code-${item.id}`}>
-                        <img src={item.code} alt={item.name} className="w-100" />
-                        <Text weight="bold" color="muted" size="paragraph-sm" className="pt-3">{item.id}</Text>
-                        <Text className="pt-3" size="paragraph-md">{item.name}</Text>
-                        <Text size="tag">{item.url}</Text>
-                      </div>
-                    )
-                  })
-                }
-              </div>
+              {
+                qrCodes.length > 1 ?
+                  <>
+                    <div className="qb-plans-listing-grid-container d-grid gap-4">
+                      {
+                        qrCodes.map(item => {
+                          return (
+                            <div className="w-100 d-flex flex-column p-3 qb-border-solid-dark qb-br-16" key={`code-${item.id}`}>
+                              <img src={item.code} alt={item.name} className="w-100" />
+                              <Text weight="bold" color="muted" size="paragraph-sm" className="pt-3">{item.id}</Text>
+                              <Text className="pt-3" size="paragraph-md">{item.name}</Text>
+                              <div className="d-flex align-items-center gap-1">
+                                <Text size="tag">{item.url}</Text>
+                                <svg width="14" height="14" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={(e) => handleCopy(e, item.url)}>
+                                  <path d="M21 21H27V5H11V11" className="qb-stroke-dark" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                  <path d="M21 11H5V27H21V11Z" className="qb-stroke-dark" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                              </div>
+                            </div>
+                          )
+                        })
+                      }
+                    </div>
+                  </>
+                  :
+                  <div className="qb-plans-listing-grid-container qb-plans-listing-grid-container-sm d-grid gap-4">
+                    {
+                      qrCodes.map(item => {
+                        return (
+                          <div className="w-100 d-flex flex-column p-3 qb-border-solid-dark qb-br-16" key={`code-${item.id}`}>
+                            <img src={item.code} alt={item.name} className="w-100" />
+                            <Text weight="bold" color="muted" size="paragraph-sm" className="pt-3">{item.id}</Text>
+                            <Text className="pt-3" size="paragraph-md">{item.name}</Text>
+                            <div className="d-flex align-items-center gap-1">
+                              <Text size="tag">{item.url}</Text>
+                              <svg width="14" height="14" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={(e) => handleCopy(e, item.url)}>
+                                <path d="M21 21H27V5H11V11" className="qb-stroke-dark" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M21 11H5V27H21V11Z" className="qb-stroke-dark" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+              }
               <div className="w-100 d-flex align-items-center justify-content-end pt-4">
                 <PrimaryButton size="sm" onClick={handleDownload} isLoading={downloading}>Download Codes</PrimaryButton>
               </div>

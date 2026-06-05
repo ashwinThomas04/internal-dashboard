@@ -4,5 +4,9 @@
    * Description : Stylesheet for plans container
 */
 .qb-plans-listing-grid-container {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  &.qb-plans-listing-grid-container-sm {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 480px));
+  }
 }
