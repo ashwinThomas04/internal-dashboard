@@ -22,10 +22,125 @@
 }
 
 .qb-markup-container {
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin-bottom: 16px;
     }
+
     p {
         margin-bottom: 24px;
     }
+}
+
+/* qb-markup-code.css
+   Styling for fenced code blocks rendered by the Markdown component.
+   Matches the "label bar + copy icon + rounded card" pattern from the
+   reference screenshot. No syntax-token coloring — that requires a
+   highlighter library (Prism/Shiki), intentionally out of scope here.
+*/
+
+.qb-markup-code-block {
+    position: relative;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Header bar: language label on the left, copy button on the right */
+.qb-markup-code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+    background: #fafafa;
+    border-bottom: 1px solid #ececec;
+}
+
+.qb-markup-code-lang {
+    color: #6b6b6b;
+    font-size: 0.8125rem;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    text-transform: lowercase;
+    user-select: none;
+}
+
+/* Copy button: icon-only by default, mirrors the small stacked-squares icon */
+.qb-markup-code-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #6b6b6b;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.qb-markup-code-copy:hover {
+    background: #ececec;
+    color: #2d2d2d;
+}
+
+.qb-markup-code-copy:active {
+    background: #e0e0e0;
+}
+
+.qb-markup-code-copy:focus-visible {
+    outline: 2px solid #888;
+    outline-offset: 1px;
+}
+
+.qb-markup-code-copy svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Brief "Copied!" confirmation state */
+.qb-markup-code-copy[data-copied="true"] {
+    color: #2d8a4e;
+}
+
+/* The actual code content */
+.qb-markup-code-block pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    background: #ffffff;
+}
+
+.qb-markup-code-block code {
+    font-family: $__font_mono;
+    font-size: inherit;
+    color: #2d2d2d;
+    background: transparent;
+    white-space: pre;
+}
+
+/* Inline code (single backticks within a paragraph) — distinct, smaller chrome */
+.qb-markup-code-inline {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.875em;
+    background: #f1f1f1;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 0.125em 0.375em;
+    color: #c0341d;
+}
+
+.qb-markup-image {
+    width: 100%;
+    height: auto;
 }
