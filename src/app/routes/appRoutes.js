@@ -11,7 +11,7 @@ const appRoute = () => {
   return (
     <>
       <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
+      <Route path="/wiki/customer-dashboard" element={<AboutPage />} />
     </>
   )
 }
