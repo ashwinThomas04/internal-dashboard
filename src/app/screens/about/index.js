@@ -153,9 +153,11 @@ All behaviour is governed by configuration, with strict boundaries to ensure sca
 const AboutPage = () => {
 
     return (
-        <Markdown>
-            {ABOUT_CONTENT}
-        </Markdown>
+        <>
+            <Markdown>
+                {ABOUT_CONTENT}
+            </Markdown>
+        </>
     )
 }
 
