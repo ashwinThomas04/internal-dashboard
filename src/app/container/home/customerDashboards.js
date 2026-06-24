@@ -19,7 +19,7 @@ const AVAILABLE_DASHBOARDS = [
     { label: "Asian 5", merchantId: "1561", amx: "BQWC", base: "asian5" },
     { label: "Eathos", merchantId: "1529", amx: "BQTK", base: "eathos" },
     { label: "Tortilla", merchantId: "1568", amx: "BRUC", base: "tortilla" },
-    { label: "Chuck E Cheese", merchantId: "1545", amx: "BMWC", base: "chuckecheese" },
+    { label: "Chuck E Cheese", merchantId: "1545", amx: "BMWC", base: "membresias", basePath: "cecmexico.com/auth/signup" },
 ];
 
 const STORE_SELECTION_TYPES = [
@@ -91,7 +91,7 @@ const CustomerDashboard = () => {
             if (s?.length) {
                 s.forEach(store => {
                     const amx = utils.generateCipher(`${store.storeId}`);
-                    const url = `https://${selectedMerchant.base}.${BASE_PATH}?amx=${amx}`;
+                    const url = `https://${selectedMerchant.base}.${selectedMerchant.basePath ? selectedMerchant.basePath : BASE_PATH}?amx=${amx}`;
                     b.push({ name: store.storeName, id: store.storeId, url });
                 });
             }
@@ -105,7 +105,7 @@ const CustomerDashboard = () => {
                 selectedStores.forEach(storeId => {
                     const store = stores.find(item => item.storeId === storeId);
                     const amx = utils.generateCipher(`${storeId}`);
-                    const url = `https://${selectedMerchant.base}.${BASE_PATH}?amx=${amx}`;
+                    const url = `https://${selectedMerchant.base}.${selectedMerchant.basePath ? selectedMerchant.basePath : BASE_PATH}?amx=${amx}`;
                     b.push({ name: store.storeName, id: store.storeId, url });
                 });
             }
