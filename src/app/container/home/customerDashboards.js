@@ -19,7 +19,7 @@ const AVAILABLE_DASHBOARDS = [
     { label: "Asian 5", merchantId: "1561", amx: "BQWC", base: "asian5" },
     { label: "Eathos", merchantId: "1529", amx: "BQTK", base: "eathos" },
     { label: "Tortilla", merchantId: "1568", amx: "BRUC", base: "tortilla" },
-    { label: "Chuck E Cheese", merchantId: "1545", amx: "BMWC", base: "membresias", basePath: "cecmexico.com/auth/signup" },
+    { label: "Chuck E Cheese", merchantId: "1545", amx: "BMWC", base: "membership", basePath: "cecmexico.com/auth/signup" },
 ];
 
 const STORE_SELECTION_TYPES = [
