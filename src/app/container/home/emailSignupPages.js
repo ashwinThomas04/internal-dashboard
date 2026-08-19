@@ -21,6 +21,7 @@ const EMAILER = [
     { label: "Marseille - generic email signup", merchantName: "Marseille", customList: null, amx: "BJYF", merchantId: "1427", tempId: codec.chrono10() },
     { label: "Playa Betty's - 'World cup competition' custom list", merchantName: "Playa Betty's", customList: "World cup competition", amx: "JKB", merchantId: "1305", queries: [{ key: "clx", value: "world-cup" }], tempId: codec.chrono10() },
     { label: "Playa Betty's - generic email signup", merchantName: "Playa Betty's", customList: null, amx: "JKB", merchantId: "1305", tempId: codec.chrono10() },
+    { label: "5 Napkin Burger - Generic email signup", merchantName: "5 Napkin Burger", customList: null, amx: "BRYJ", merchantId: "1572", tempId: codec.chrono10() }
     // { label: "", amx: "", merchantId: "" }
 ]
 
@@ -135,11 +136,17 @@ const EmailSignupPages = () => {
                                 {
                                     selectedPages.includes(item.tempId) ?
                                         <div className="d-flex align-items-center justify-content-between gap-3">
-                                            <Text size="title-sm" weight="bold">{item.merchantName}</Text>
+                                            <div className="d-flex align-items-baseline gap-2">
+                                                <Text size="title-sm" weight="bold">{item.merchantName}</Text>
+                                                <Text size="paragraph-xs" weight="regular">({item.merchantId})</Text>
+                                            </div>
                                             <Badge size="sm" color="primary" weight="black">SELECTED</Badge>
                                         </div>
                                         :
-                                        <Text size="title-sm" weight="bold">{item.merchantName}</Text>
+                                        <div className="d-flex align-items-baseline gap-2">
+                                            <Text size="title-sm" weight="bold">{item.merchantName}</Text>
+                                            <Text size="paragraph-xs" weight="regular">({item.merchantId})</Text>
+                                        </div>
                                 }
                                 <Text size="paragraph-xs">{item.customList ? "Custom List" : "Generic Page"}</Text>
                                 {item.customList ? <Text size="tag" color="primary" weight="bold">{item.customList}</Text> : null}
