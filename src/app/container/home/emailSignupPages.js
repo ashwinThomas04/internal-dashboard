@@ -21,8 +21,10 @@ const EMAILER = [
     { label: "Marseille - generic email signup", merchantName: "Marseille", customList: null, amx: "BJYF", merchantId: "1427", tempId: codec.chrono10() },
     { label: "Playa Betty's - 'World cup competition' custom list", merchantName: "Playa Betty's", customList: "World cup competition", amx: "JKB", merchantId: "1305", queries: [{ key: "clx", value: "world-cup" }], tempId: codec.chrono10() },
     { label: "Playa Betty's - generic email signup", merchantName: "Playa Betty's", customList: null, amx: "JKB", merchantId: "1305", tempId: codec.chrono10() },
-    { label: "5 Napkin Burger - Generic email signup", merchantName: "5 Napkin Burger", customList: null, amx: "BRYJ", merchantId: "1572", tempId: codec.chrono10() }
-    // { label: "", amx: "", merchantId: "" }
+    { label: "5 Napkin Burger - Generic email signup", merchantName: "5 Napkin Burger", customList: null, amx: "BRYJ", merchantId: "1572", tempId: codec.chrono10() },
+    { label: "Bar Bas - Generic email signup", amx: "BKVD", merchantId: "1502", merchantName: "Bar Bas", tempId: codec.chrono10(), customList: null },
+    { label: "Bar Bas - 'Nexwrk Outreach' custom list", amx: "BKVD", merchantId: "1502", merchantName: "Bar Bas", tempId: codec.chrono10(), customList: "Nexwrk Outreach", queries: [{ key: "clx", value: "nexwrk-outreach" }] },
+    //   { label: "", amx: "", merchantId: "" }
 ]
 
 const EmailSignupPages = () => {
